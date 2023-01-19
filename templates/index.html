@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+
+    <p class="pt-0">
+        {{ form.width.label }}
+        {{ form.width(size=32,class_="form-control",placeholder=form.width.name) }}
+        {% for error in form.width.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p class="pt-0">
+        {{ form.height.label }}
+        {{ form.height(size=32,class_="form-control",placeholder=form.height.name) }}
+        {% for error in form.height.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p class="pt-2">{{ form.submit(class_="btn btn-primary") }}</p>
+</form>
+{% endblock %}
