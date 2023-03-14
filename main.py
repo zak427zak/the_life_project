@@ -15,6 +15,9 @@ class InitWorldForm(FlaskForm):
     submit = SubmitField(('Создать жизнь'))
 
 
+GameOfLife(25, 25)
+
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     init_form = InitWorldForm()
